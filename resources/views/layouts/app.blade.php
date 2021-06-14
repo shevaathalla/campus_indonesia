@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -77,7 +77,29 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        {{-- Sidebar --}}
+                        <div class="card">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                  <a class="nav-link" href="{{ route('home') }}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="{{ route('major.index') }}">Jurusan</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Link</a>
+                                </li>                                
+                              </ul>
+                        </div>                        
+                    </div>
+                    <div class="col-md-10">
+                        @yield('content')
+                    </div>
+                </div>
+            </div>            
         </main>
     </div>
 </body>
