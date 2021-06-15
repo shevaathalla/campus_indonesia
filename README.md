@@ -1,62 +1,75 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Kampus Indonesia Backend Internship Test
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Penjelasan Aplikasi
+Aplikasi ini dibuat menggunakan framework laravel dan bootstrap 4 scaffolding. Tujuan pembuatan aplikasi ini adalah untuk mengikuti seleksi internship di Kampus Indonesia. Aplikasi ini memiliki 4 model
 
-## About Laravel
+- User (pengguna)
+  User berfungsi untuk menyimpan data pengguna yang telah mendaftar aplikasi.
+- Faculty (fakultas)
+  Sebelum menambahkan jurusan harap menambahkan fakultas terlebih dahulu
+- Major (jurusan)
+- News (berita)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Autentikasi
+Aplikasi ini support 2 autentikasi yaitu autentikasi biasa dan google.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+*agar autentikasi menggunakan google dan reset password bekerja harap atur setting Mail dan Google client server pada env anda
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Aplikasi ini memiliki 2 level access yaitu admin dan user biasa
 
-## Learning Laravel
+- Admin
+  Admin memiliki hak untuk melihat, membuat, mengedit, dan menghapus model Faculty (fakultas), Major (jurusan), News(berita)
+- User
+  hak akses yang dimiliki User sama dengan guest (tidak memiliki account) yaitu hanya bisa melihat data yang sudah dibuat oleh admin
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+  ## ERD Database
+  ![erd](public/image/erd.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+  ## Screenshot Aplikasi
+  - Landing Page
+    ![landing_page](public/screenshot/landing_page.png)
 
-## Laravel Sponsors
+  - Register Page
+    ![register_page](public/screenshot/register.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+  - Login Page
+    ![login_page](public/screenshot/login.png)
 
-### Premium Partners
+  - Forgot Password Email Notification
+    ![forgot_password_email](public/screenshot/forgot_password_email.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+  - Google Authentication
+    ![google_authentication](public/screenshot/google_authentication.png)
 
-## Contributing
+  - Faculty Create Page
+    ![faculty_page](public/screenshot/faculty_create.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+  - Faculty Index Page
+    ![faculty_index_page](public/screenshot/faculty_index.png)
 
-## Code of Conduct
+  - Faculty Edit Page
+    ![faculty_edit_page](public/screenshot/faculty_edit.png)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+  - Major Create Page
+    ![major_create_page](public/screenshot/major_create.png)
+    
+  - Major Index Page
+    ![major_index_page](public/screenshot/major_index.png)
 
-## Security Vulnerabilities
+  - Major Edit Page
+    ![major_edit_page](public/screenshot/major_edit.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+  - Faculty Show Page
+    ![faculty_show_page](public/screenshot/faculty_show.png)
 
-## License
+  -  News Create Page
+    ![news_create_page](public/screenshot/news_create.png)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+  -  News Index Page
+    ![news_index_page](public/screenshot/news_index.png)
+
+  -  News Show Page
+    ![news_show_page](public/screenshot/news_show.png)
+
+  -  News Edit Page
+    ![news_edit_page](public/screenshot/news_edit.png)    
