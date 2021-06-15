@@ -80,7 +80,8 @@ class MajorController extends Controller
      */
     public function edit(Major $major)
     {
-        return view('major.edit',compact('major'));
+        $faculties = Faculty::all();
+        return view('major.edit',compact(['major','faculties']));
     }
 
     /**

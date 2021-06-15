@@ -4,7 +4,7 @@
     <div class="col-md-10">
         <div class="card">
             <div class="card-header text-uppercase font-weight-bold">
-                Create News
+                Edit News
             </div>
             <div class="card-body">
                 <form action="{{ route('news.update',['news' => $news]) }}" method="post">

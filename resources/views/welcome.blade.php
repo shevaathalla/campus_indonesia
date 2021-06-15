@@ -97,7 +97,9 @@
             </div>
 
             <div class="links">
-                <a href="{{ route('major.index') }}">Jurusan</a>
+                <a href="{{ route('major.index') }}">Major</a>
+                <a href="{{ route('faculty.index') }}">Faculty</a>
+                <a href="{{ route('news.index') }}">News</a>
             </div>            
         </div>
     </div>
