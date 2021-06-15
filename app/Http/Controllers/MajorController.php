@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Validator;
 
 class MajorController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth','admin'])->except([
+            'index'
+        ]);
+    }
     /**
      * Display a listing of the resource.
      *
