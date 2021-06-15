@@ -18,7 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/8c90932cd1.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8c90932cd1.js" crossorigin="anonymous"></script>    
+
+    <!-- Datatables -->
+    <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap4.min.css') }}">
+
 </head>
 <body>
     <div id="app">
@@ -87,6 +91,9 @@
                                   <a class="nav-link" href="{{ route('home') }}">Home</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('faculty.index') }}">Faculty</a>
+                                  </li>                
+                                <li class="nav-item">
                                   <a class="nav-link" href="{{ route('major.index') }}">Jurusan</a>
                                 </li>
                                 <li class="nav-item">
@@ -102,5 +109,13 @@
             </div>            
         </main>
     </div>
+
+    <!-- JQuery -->
+    <script src="{{ asset('js/jquery.min.js') }}" ></script>
+
+    <!-- Datatables -->
+    <script src="{{ asset('js/jquery.dataTables.min.js') }}" defer ></script>
+
+    @yield('script')
 </body>
 </html>

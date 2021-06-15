@@ -8,17 +8,16 @@
     <div class="row">
         <div class="col">
             <h2 class="font-weight-bold text-uppercase">
-                MAJORS
+                Faculty {{ $faculty->name }}
             </h2>
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="text-justify">
+                {{ $faculty->description }}
+            </div>
         </div>
-        @auth
-            @if (auth()->user()->level == 'admin')
-                <div class="col">
-                    <a href="{{ route('major.create') }}" class="btn btn-success float-right text-uppercase font-weight-bold">
-                        <i class="fa fa-plus mr-2"></i> Create</a>
-                </div>
-            @endif
-        @endauth
     </div>
     <hr>
     <div class="row">
@@ -34,17 +33,17 @@
                     </tr>
                 </thead>            
                 <tbody>
-                    @foreach ($majors as $major)
+                    @foreach ($faculty->majors as $major)
                     <tr>
                         <td>{{ $major->name }}</td>
                         <td>{{ $major->faculty->name }}</td>
                         <td>{{ $major->description }}</td>
-                        <td> <a href=" {{ $major->website }}" class="btn-link"> {{ $major->website }}</a></td>
+                        <td> <a href=" {{ $major->website }}" class="btn btn-link"> {{ $major->website }}</a></td>
                         <td>
                             @auth
                                 @if (auth()->user()->level == 'admin')
                                     <a href="{{ route('major.edit', ['major' => $major]) }}"
-                                        class="btn btn-info text-white font-weight-bold text-uppercase">
+                                        class="btn btn-info text-white font-weight-bold">
                                         <i class="fa fa-edit"></i>
                                         Edit
                                     </a>
@@ -82,3 +81,4 @@
         });
     </script>
 @endsection
+

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faculty;
 use App\Models\Major;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -26,7 +27,8 @@ class MajorController extends Controller
      */
     public function create()
     {
-        return view('major.create');
+        $faculties = Faculty::all();
+        return view('major.create', compact('faculties'));
     }
 
     /**
@@ -44,7 +46,9 @@ class MajorController extends Controller
 
         $major = Major::create([
             'name' => $request->name,
-            'description' => $request->description
+            'description' => $request->description,
+            'faculty_id' => $request->faculty,
+            'website' => $request->website,
         ]);
 
         return redirect(route('major.index'))->with('status','Major berhasil dibuat');

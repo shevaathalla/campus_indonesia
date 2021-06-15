@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Major extends Model
+class Faculty extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $guarded =[];
 
-    public function faculty(){
-        return $this->belongsTo(Faculty::class);
+    public function majors(){
+        return $this->hasMany(Major::class);
     }
 }

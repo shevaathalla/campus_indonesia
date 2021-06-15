@@ -8,13 +8,13 @@
     <div class="row">
         <div class="col">
             <h2 class="font-weight-bold text-uppercase">
-                MAJORS
+                Faculties
             </h2>
         </div>
         @auth
             @if (auth()->user()->level == 'admin')
                 <div class="col">
-                    <a href="{{ route('major.create') }}" class="btn btn-success float-right text-uppercase font-weight-bold">
+                    <a href="{{ route('faculty.create') }}" class="btn btn-success float-right text-uppercase font-weight-bold">
                         <i class="fa fa-plus mr-2"></i> Create</a>
                 </div>
             @endif
@@ -23,32 +23,35 @@
     <hr>
     <div class="row">
         <div class="col">
-            <table class="table" id="major_table">
+            <table class="table" id="faculty_table">
                 <thead>
                     <tr>
-                        <th>Major Name</th>
-                        <th>Faculty</th>
+                        <th>Faculty Name</th>                        
                         <th>Description</th>
                         <th>Website</th>
                         <th>Action</th>
                     </tr>
                 </thead>            
                 <tbody>
-                    @foreach ($majors as $major)
+                    @foreach ($faculties as $faculty)
                     <tr>
-                        <td>{{ $major->name }}</td>
-                        <td>{{ $major->faculty->name }}</td>
-                        <td>{{ $major->description }}</td>
-                        <td> <a href=" {{ $major->website }}" class="btn-link"> {{ $major->website }}</a></td>
+                        <td>{{ $faculty->name }}</td>                        
+                        <td>{{ $faculty->description }}</td>
+                        <td> <a href=" {{ $faculty->website }}" class="btn btn-link"> {{ $faculty->website }}</a></td>
                         <td>
                             @auth
                                 @if (auth()->user()->level == 'admin')
-                                    <a href="{{ route('major.edit', ['major' => $major]) }}"
+                                    <a href="{{ route('faculty.edit', ['faculty' => $faculty]) }}"
                                         class="btn btn-info text-white font-weight-bold text-uppercase">
                                         <i class="fa fa-edit"></i>
                                         Edit
                                     </a>
-                                    <form action="{{ route('major.destroy', ['major' => $major]) }}" method="post"
+                                    <a href="{{ route('faculty.show',['faculty'=>$faculty]) }}"
+                                        class="btn btn-warning font-weight-bold text-uppercase ml-2">
+                                        <i class="fa fa-info"></i>
+                                        Info
+                                    </a>
+                                    <form action="{{ route('faculty.destroy', ['faculty' => $faculty]) }}" method="post"
                                         class="form-inline float-left">
                                         @csrf
                                         @method('delete')
@@ -78,7 +81,7 @@
 @section('script')
     <script>
         $(function() {            
-            $('#major_table').DataTable();
+            $('#faculty_table').DataTable();
         });
     </script>
 @endsection
