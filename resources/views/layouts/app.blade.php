@@ -90,7 +90,7 @@
                                   <a class="nav-link" href="{{ route('major.index') }}">Jurusan</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">News</a>
+                                  <a class="nav-link" href="{{ route('news.index') }}">News</a>
                                 </li>                                
                               </ul>
                         </div>                        

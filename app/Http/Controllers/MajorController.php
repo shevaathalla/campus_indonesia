@@ -37,10 +37,10 @@ class MajorController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            $request->name => ['required','string','unique:majors'],
-            $request->description => ['required','string'],
-        ]);
+        // $validated = $request->validate([
+        //     $request->name => ['required','string','unique:majors'],
+        //     $request->description => ['required','string'],
+        // ]);
 
         $major = Major::create([
             'name' => $request->name,
@@ -81,10 +81,10 @@ class MajorController extends Controller
      */
     public function update(Request $request, Major $major)
     {
-        $validated = $request->validate([
-            $request->name => ['required','string'],
-            $request->description => ['required','string'],
-        ]);
+        // $validated = $request->validate([
+        //     $request->name => ['required','string'],
+        //     $request->description => ['required','string'],
+        // ]);
         
         Major::where('id',$major->id)->update([
             'name' => $request->name,
